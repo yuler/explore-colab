@@ -1,6 +1,6 @@
-# 🚀 Explore Colab: 本地开发与云端算力双向联动指南
+# 🚀 Explore Colab
 
-本项目致力于探索从**本地开发环境**（VS Code / Cursor / 终端）高效联动 **Google Colab 云端算力**（免费/付费 GPU/TPU）的两种主流工作流：
+本项目致力于探索从**本地开发环境**高效联动 **Google Colab 云端算力**（免费/付费 GPU/TPU）的两种主流工作流：
 
 1. **GitHub 双向联动（免克隆直达 + 反向提交）**：适合可视化交互式开发、教学演示与团队共享；
 2. **Google Colab CLI（终端直连 + 智能体集成）**：适合自动化脚本、批处理训练任务与 AI Agent 无头（Headless）执行。
@@ -145,6 +145,26 @@ pip install google-colab-cli
   ```bash
   colab stop -s my-gpu
   ```
+
+---
+
+## 🔌 进阶：REST API 与 MCP 集成
+
+除 CLI 外，Google Colab 还提供两种更底层的编程接入方式，适合构建自定义工具链或将 Colab 集成到 AI Agent 工作流中：
+
+### REST API
+
+[Google Colab REST API](https://developers.google.com/colab/api/reference/rest) 允许通过 HTTP 直接管理 Colab 运行时（Runtime）的完整生命周期：创建、查询、执行代码、停止等。适合需要在自有后端或平台中以编程方式调度云端算力的场景。
+
+### MCP（Model Context Protocol）
+
+[Google Colab MCP](https://developers.google.com/colab/api/reference/mcp) 是 Google 官方提供的 MCP Server，遵循 Anthropic 的 Model Context Protocol 标准。AI 编码智能体（如 Claude、Cursor Agent、pi 等）可通过 MCP 直接调用 Colab 的运行时能力，实现：
+
+- 让 Agent 自主申请云端 GPU/TPU 资源；
+- 在 Agent 对话中直接执行代码并取回结果；
+- 与本地开发环境无缝联动，无需人工切换浏览器。
+
+> 💡 这正是让本地 AI Agent 「按需调用云端算力」的关键基础设施。
 
 ---
 
