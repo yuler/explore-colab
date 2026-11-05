@@ -1,0 +1,7 @@
+# Core Data Science & Interactive Python
+torch
+numpy
+pandas
+matplotlib
+psutil
+ipywidgets
