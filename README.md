@@ -13,7 +13,7 @@
 | :--- | :--- | :--- |
 | **核心机制** | 基于 GitHub 规范 URL 免克隆直接打开 Notebook；Colab 网页端编辑后反向 commit | 谷歌官方 CLI 工具 (`colab-cli`)，在本地终端通过 API/SSH 直接调用 Colab 运行时 |
 | **交互界面** | 浏览器 Jupyter 交互界面（含图表、Widget、富文本渲染） | 本地终端 (CLI)、REPL 或远程脚本运行 |
-| **硬件加速** | 网页菜单中手动切换 GPU/TPU (T4, L4, A100, TPU) | 终端命令行直接指定参数（如 `colab new --gpu T4`） |
+| **硬件加速** | 右上角 Connect 下拉菜单 → Change runtime type，切换 GPU/TPU (T4, L4, A100, TPU) | 终端命令行直接指定参数（如 `colab new --gpu T4`） |
 | **适用场景** | 数据可视化探索 (EDA)、交互式调试、团队 Notebook 评审与展示 | 自动化测试、长时间模型训练/微调、AI 编码智能体自动调度云算力 |
 | **环境依赖** | 本地仅需 Git 客户端与浏览器 | 需要 Python / `uv` 安装 `google-colab-cli` 并完成 Google 账号鉴权 |
 
@@ -182,11 +182,11 @@ pip install google-colab-cli
 ```
 
 ### 快速直达链接：
-1. **[01_colab_quickstart_benchmark.ipynb](file:///home/yule/Explore/explore-colab/notebooks/01_colab_quickstart_benchmark.ipynb)**  
+1. **[01_colab_quickstart_benchmark.ipynb](notebooks/01_colab_quickstart_benchmark.ipynb)**  
    [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/yuler/explore-colab/blob/main/notebooks/01_colab_quickstart_benchmark.ipynb)  
    *内容：CPU 核心/显存检测、CUDA 大矩阵乘法算力压测（对比 CPU vs GPU 耗时）、Google Drive 挂载模板。*
 
-2. **[02_interactive_eda_and_plot.ipynb](file:///home/yule/Explore/explore-colab/notebooks/02_interactive_eda_and_plot.ipynb)**  
+2. **[02_interactive_eda_and_plot.ipynb](notebooks/02_interactive_eda_and_plot.ipynb)**  
    [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/yuler/explore-colab/blob/main/notebooks/02_interactive_eda_and_plot.ipynb)  
    *内容：加载 Colab 数据表格增强插件、交互式滑动条与下拉菜单联动绘图、特征相关性热力图。*
 
