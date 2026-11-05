@@ -110,8 +110,8 @@ pip install google-colab-cli
 
 * **执行本地脚本 / 代码片段 (`colab exec`)**：
   ```bash
-  # 远程执行单行 Python 代码
-  colab exec -s my-gpu "import torch; print('CUDA 可用:', torch.cuda.is_available())"
+  # 远程执行单行 Python 代码（代码从标准输入读入，不能写成位置参数）
+  echo "import torch; print('CUDA 可用:', torch.cuda.is_available())" | colab exec -s my-gpu
 
   # 远程执行本地脚本文件（内核状态跨命令持久保持）
   colab exec -s my-gpu -f scripts/colab_interactive_demo.py
